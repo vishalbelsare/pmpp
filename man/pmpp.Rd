@@ -11,13 +11,13 @@ pmpp(dep_var, data, panel_ind = colnames(data[, 1:2]), exp_var = NULL,
   pure_data = FALSE)
 }
 \arguments{
-\item{dep_var}{character string indicating name of dependet variable}
+\item{dep_var}{character string indicating name of dependent variable}
 
 \item{data}{data.frame or matrix with input data}
 
 \item{panel_ind}{vector of length 2 indicating names of variables indexing units and time periods respectively}
 
-\item{exp_var}{vector of character strings indicating names of exogeneuos explanatory variables}
+\item{exp_var}{vector of character strings indicating names of exogeneous explanatory variables}
 
 \item{csi_var}{vector of character strings indicating names of cross-sectionally invariant explanatory variables; 
 feature not supported yet}
@@ -38,7 +38,7 @@ larger value may yield higher accuracy, but increases computation time}
 \item{gmm_inst}{number of lagged values of the dependent variable to be used as GMM instruments 
 in Arellano-Bond/Blundell-Bond setting}
 
-\item{pure_data}{if TRUE, removes indexing/subsetting from model's call on data, faciliating use in a loop}
+\item{pure_data}{if TRUE, removes indexing/subsetting from model's call on data, facilitating use in a loop}
 }
 \value{
 An object of class \code{pmpp}; a list with parameter estimates, fitted values,
@@ -65,7 +65,7 @@ The PMPP model is a two-step procedure. First, the homogeneous parameters are
          estimation process.
          In the second step of the PMPP modelling, the individual-specific intercept is
          calculated based on the formula for posterior mean (Tweedie's Formula). It involves
-         apporximating certain density function, which can be done in two ways:
+         approximating certain density function, which can be done in two ways:
          \itemize{
          \item Parametrically, assuming Gaussian distribution,
          \item Using a 2D kernel density estimator.

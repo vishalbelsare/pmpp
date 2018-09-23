@@ -13,9 +13,9 @@
 #'             Empirical Bayes approach. Evidence from consumer goods sector.",
 #'             Erasmus University Thesis Repository
 #'
-#' @param dep_var character string indicating name of dependet variable
+#' @param dep_var character string indicating name of dependent variable
 #' @param panel_ind vector of length 2 indicating names of variables indexing units and time periods respectively
-#' @param exp_var vector of character strings indicating names of exogeneuos explanatory variables
+#' @param exp_var vector of character strings indicating names of exogeneous explanatory variables
 #' @param csi_var vector of character strings indicating names of cross-sectionally invariant explanatory variables; 
 #' feature not supported yet
 #' @param data data.frame or matrix with input data
@@ -29,7 +29,7 @@
 #' "threesteps"; "threesteps" can be used for "GMM_SSYS" only
 #' @param gmm_inst number of lagged values of the dependent variable to be used as GMM instruments 
 #' in Arellano-Bond/Blundell-Bond setting
-#' @param pure_data if TRUE, removes indexing/subsetting from model's call on data, faciliating use in a loop
+#' @param pure_data if TRUE, removes indexing/subsetting from model's call on data, facilitating use in a loop
 #'
 #' @details The PMPP model is a two-step procedure. First, the homogeneous parameters are
 #'          estimated using one of the QMLE or GMM-based methods:
@@ -46,7 +46,7 @@
 #'          estimation process.
 #'          In the second step of the PMPP modelling, the individual-specific intercept is
 #'          calculated based on the formula for posterior mean (Tweedie's Formula). It involves
-#'          apporximating certain density function, which can be done in two ways:
+#'          approximating certain density function, which can be done in two ways:
 #'          \itemize{
 #'          \item Parametrically, assuming Gaussian distribution,
 #'          \item Using a 2D kernel density estimator.

@@ -22,7 +22,7 @@ with empty rows if their time ID is in timestamps}
 A \code{data.frame} with empty rows added.
 }
 \description{
-Creates a foracast frame as required by the \code{predict.pmpp()} method.
+Creates a forecast frame as required by the \code{predict.pmpp()} method.
              To each cross-sectional unit in the data, a specified
              number of rows are added that contain only this unit's ID
              and the selected time ID.

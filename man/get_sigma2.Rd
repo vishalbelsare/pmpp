@@ -15,11 +15,11 @@ get_sigma2(rho, alpha = 0, common_par_method, X_star, Y_star, Z_star,
 
 \item{common_par_method}{method for estimating common parameters}
 
-\item{X_star}{auxilliary matrix for OFD transformation}
+\item{X_star}{auxiliary matrix for OFD transformation}
 
-\item{Y_star}{auxilliary matrix for OFD transformation}
+\item{Y_star}{auxiliary matrix for OFD transformation}
 
-\item{Z_star}{auxilliary matrix for OFD transformation}
+\item{Z_star}{auxiliary matrix for OFD transformation}
 
 \item{X_mat}{lagged dependent variable matrix}
 

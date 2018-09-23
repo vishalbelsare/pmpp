@@ -38,11 +38,11 @@ GMM_parametric(rho, alpha = 0, optim_method, init, n_lambda, n_alpha,
 
 \item{common_par_method}{method for estimating common parameters}
 
-\item{X_star}{auxilliary matrix for OFD transformation}
+\item{X_star}{auxiliary matrix for OFD transformation}
 
-\item{Y_star}{auxilliary matrix for OFD transformation}
+\item{Y_star}{auxiliary matrix for OFD transformation}
 
-\item{Z_star}{auxilliary matrix for OFD transformation}
+\item{Z_star}{auxiliary matrix for OFD transformation}
 }
 \description{
 Produce posterior means of lambda's for the parametric GMM implementation

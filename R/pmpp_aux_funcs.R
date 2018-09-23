@@ -36,9 +36,9 @@ get_lambda0 <- function(rho, alpha = rep(0, n_alpha), N, T, n_alpha, Y_mat,
 #' @param rho lagged dependent variable coefficients
 #' @param alpha external variables coefficients
 #' @param common_par_method method for estimating common parameters
-#' @param X_star auxilliary matrix for OFD transformation
-#' @param Y_star auxilliary matrix for OFD transformation
-#' @param Z_star auxilliary matrix for OFD transformation
+#' @param X_star auxiliary matrix for OFD transformation
+#' @param Y_star auxiliary matrix for OFD transformation
+#' @param Z_star auxiliary matrix for OFD transformation
 #' @param X_mat lagged dependent variable matrix
 #' @param Y_mat dependent variable matrix
 #' @param Z_mat external variable matrix
@@ -86,9 +86,9 @@ get_sigma2 <- function(rho, alpha = 0, common_par_method, X_star, Y_star, Z_star
 #' @param N cross-sectional dimension of the data
 #' @param aux_Y0 auxiliary matrix with initial observations of the dependent variable 
 #' @param common_par_method method for estimating common parameters
-#' @param X_star auxilliary matrix for OFD transformation
-#' @param Y_star auxilliary matrix for OFD transformation
-#' @param Z_star auxilliary matrix for OFD transformation
+#' @param X_star auxiliary matrix for OFD transformation
+#' @param Y_star auxiliary matrix for OFD transformation
+#' @param Z_star auxiliary matrix for OFD transformation
 #'
 #' @importFrom minqa bobyqa
 GMM_parametric <- function(rho, alpha = 0, optim_method, init, n_lambda, n_alpha,

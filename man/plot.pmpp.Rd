@@ -4,14 +4,12 @@
 \alias{plot.pmpp}
 \title{Plot method for objects of class \code{pmpp}.}
 \usage{
-\method{plot}{pmpp}(object, file = "", ...)
+\method{plot}{pmpp}(x, ...)
 }
 \arguments{
-\item{object}{object of class \code{pmpp}, as returned by \code{pmpp()}}
+\item{x}{object of class \code{pmpp}, as returned by \code{pmpp()}}
 
-\item{file}{a connection, or a character string naming the file to print to}
-
-\item{...}{not used}
+\item{...}{other arguments passed to the method}
 }
 \value{
 No object is returned. Displays a \code{ggplot} of density of the estimated 

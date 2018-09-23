@@ -2,12 +2,13 @@
 #'
 #' @author Michal Oleszak
 #'
-#' @param model    an object of class \code{pmpp()}
+#' @param object   an object of class \code{pmpp()}
 #' @param fframe   \code{data.frame} with the same columns as input data
 #'                 to \code{model}, but with empty rows added to each
 #'                 cross-sectional unit, as created by \code{create_fframe()}
 #' @param iter     iterating constant, to be used in a loop when extraction
 #'                 from call is needed
+#' @param ...      other arguments passed to the method
 #'
 #' @return A \code{data.frame} with predicted and true values.
 #'
@@ -22,9 +23,16 @@
 #' pmpp_model <- pmpp(dep_var = "emp", data = EmplUK)
 #' my_fframe <- create_fframe(EmplUK, 1983:1985)
 #' prediction <- predict(pmpp_model, my_fframe)
-predict.pmpp <- function(model, fframe, iter = NULL) {
+predict.pmpp <- function(object, fframe = NULL, iter = NULL, ...) {
+  A <- B <- NULL
+  model <- object
   if (!inherits(model, "pmpp")) {
     stop("Non-convenient object, model should be of class 'pmpp'.")
+  }
+
+  # If no fframe provided, return fitted values -------------------------------
+  if (is.null(fframe)) {
+    return(model$fitted_values)
   }
 
   # Get model output & prepare forecast frame ---------------------------------

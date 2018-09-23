@@ -4,10 +4,10 @@
 \alias{predict.pmpp}
 \title{Compute forecasts with a PMPP model}
 \usage{
-\method{predict}{pmpp}(model, fframe, iter = NULL)
+\method{predict}{pmpp}(object, fframe = NULL, iter = NULL, ...)
 }
 \arguments{
-\item{model}{an object of class \code{pmpp()}}
+\item{object}{an object of class \code{pmpp()}}
 
 \item{fframe}{\code{data.frame} with the same columns as input data
 to \code{model}, but with empty rows added to each
@@ -15,6 +15,8 @@ cross-sectional unit, as created by \code{create_fframe()}}
 
 \item{iter}{iterating constant, to be used in a loop when extraction
 from call is needed}
+
+\item{...}{other arguments passed to the method}
 }
 \value{
 A \code{data.frame} with predicted and true values.

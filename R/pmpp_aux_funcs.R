@@ -1,14 +1,14 @@
 #' Produce sufficient statistics (lambda0) given the common coefficients (rho0)
 #'
-#' @param rho .
-#' @param alpha .
-#' @param N .
-#' @param T .
-#' @param n_alpha .
-#' @param Y_mat .
-#' @param X_mat .
-#' @param W .
-#' @param Z_mat .
+#' @param rho lagged dependent variable coefficients
+#' @param alpha external variables coefficients
+#' @param N cross-sectional dimension of the data
+#' @param T time dimension of the data
+#' @param n_alpha number of external variables
+#' @param Y_mat dependent variable matrix
+#' @param X_mat lagged dependent variable matrix
+#' @param W cross-sectionally invariant variables - not used now
+#' @param Z_mat external variable matrix
 #'
 #' @importFrom pracma mldivide
 get_lambda0 <- function(rho, alpha = rep(0, n_alpha), N, T, n_alpha, Y_mat,
@@ -33,16 +33,16 @@ get_lambda0 <- function(rho, alpha = rep(0, n_alpha), N, T, n_alpha, Y_mat,
 #' Produce variance of the shocks estimated using GMM residues (sigma2_0)
 #' given the common coefficients (rho0)
 #'
-#' @param rho .
-#' @param alpha .
-#' @param common_par_method .
-#' @param X_star .
-#' @param Y_star .
-#' @param Z_star .
-#' @param X_mat .
-#' @param Y_mat .
-#' @param Z_mat .
-#' @param n_alpha .
+#' @param rho lagged dependent variable coefficients
+#' @param alpha external variables coefficients
+#' @param common_par_method method for estimating common parameters
+#' @param X_star auxilliary matrix for OFD transformation
+#' @param Y_star auxilliary matrix for OFD transformation
+#' @param Z_star auxilliary matrix for OFD transformation
+#' @param X_mat lagged dependent variable matrix
+#' @param Y_mat dependent variable matrix
+#' @param Z_mat external variable matrix
+#' @param n_alpha number of external variables
 get_sigma2 <- function(rho, alpha = 0, common_par_method, X_star, Y_star, Z_star,
                        X_mat, Y_mat, Z_mat, n_alpha) {
   if (common_par_method == "GMM.ABover") {
@@ -72,23 +72,23 @@ get_sigma2 <- function(rho, alpha = 0, common_par_method, X_star, Y_star, Z_star
 #' Produce posterior means of lambda's for the parametric GMM implementation
 #' given autoregressive coefficient (rho)
 #'
-#' @param rho .
-#' @param alpha .
-#' @param optim_method .
-#' @param init .
-#' @param n_lambda .
-#' @param n_alpha .
-#' @param X_mat .
-#' @param Y_mat .
-#' @param Z_mat .
-#' @param W .
-#' @param T .
-#' @param N .
-#' @param aux_Y0 .
-#' @param common_par_method .
-#' @param X_star .
-#' @param Y_star .
-#' @param Z_star .
+#' @param rho lagged dependent variable coefficients
+#' @param alpha external variables coefficients
+#' @param optim_method optimization method
+#' @param init initial values for the optimization routine
+#' @param n_lambda number of columns in W; currently always set to 1
+#' @param n_alpha number of external variables
+#' @param X_mat lagged dependent variable matrix
+#' @param Y_mat dependent variable matrix
+#' @param Z_mat external variable matrix
+#' @param W cross-sectionally invariant variables - not used now
+#' @param T time dimension of the data
+#' @param N cross-sectional dimension of the data
+#' @param aux_Y0 auxiliary matrix with initial observations of the dependent variable 
+#' @param common_par_method method for estimating common parameters
+#' @param X_star auxilliary matrix for OFD transformation
+#' @param Y_star auxilliary matrix for OFD transformation
+#' @param Z_star auxilliary matrix for OFD transformation
 #'
 #' @importFrom minqa bobyqa
 GMM_parametric <- function(rho, alpha = 0, optim_method, init, n_lambda, n_alpha,
@@ -164,12 +164,12 @@ GMM_parametric <- function(rho, alpha = 0, optim_method, init, n_lambda, n_alpha
 #' Obtain 2D kernel density estimates given sufficient statistics for lambdas
 #' and the initial data Y0
 #'
-#' @param lambdas .
-#' @param sigma2 .
-#' @param dens_grid .
-#' @param N .
-#' @param T .
-#' @param Y0 .
+#' @param lambdas sufficient statistics for the intercept term
+#' @param sigma2 variance of the shocks
+#' @param dens_grid grid over which the density is to be computed
+#' @param N cross-sectional dimension of the data
+#' @param T time dimension of the data
+#' @param Y0 initial observations of the dependent variable 
 #'
 #' @importFrom pracma interp2 ones
 get_kernel <- function(lambdas, sigma2, dens_grid, N, T, Y0) {
@@ -208,15 +208,15 @@ get_kernel <- function(lambdas, sigma2, dens_grid, N, T, Y0) {
 #' Produce (negative) log marginal likelihood for QMLE with correlated random
 #' coefficients
 #'
-#' @param param .
-#' @param n_alpha .
-#' @param X_mat .
-#' @param Y_mat .
-#' @param Z_mat .
-#' @param W .
-#' @param T .
-#' @param N .
-#' @param aux_Y0 .
+#' @param param vectores of parameters to optimize over
+#' @param n_alpha number of external variables
+#' @param X_mat lagged dependent variable matrix
+#' @param Y_mat dependent variable matrix
+#' @param Z_mat external variable matrix
+#' @param W cross-sectionally invariant variables - not used now
+#' @param T time dimension of the data
+#' @param N cross-sectional dimension of the data
+#' @param aux_Y0 auxiliary matrix with initial observations of the dependent variable 
 #'
 #' @importFrom pracma mldivide mrdivide Diag
 loglikelihood_QMLE <- function(param, n_alpha, X_mat, Y_mat, Z_mat, W, T, N,
@@ -277,18 +277,18 @@ loglikelihood_QMLE <- function(param, n_alpha, X_mat, Y_mat, Z_mat, W, T, N,
 
 #' Produce negative log-likelihood in the GMM case
 #'
-#' @param theta .
-#' @param rho_GMMpar .
-#' @param alpha_GMMpar .
-#' @param sigma2_GMMpar .
-#' @param n_alpha .
-#' @param X_mat .
-#' @param Y_mat .
-#' @param Z_mat .
-#' @param W .
-#' @param T .
-#' @param N .
-#' @param aux_Y0 .
+#' @param theta vector of homogeneous parameters
+#' @param rho_GMMpar lagged dependent variables coefficient estimates from the GMM
+#' @param alpha_GMMpar external variables coefficient estimates from the GMM
+#' @param sigma2_GMMpar variance of the shocks estimated using GMM residuals
+#' @param n_alpha number of external variables
+#' @param X_mat lagged dependent variable matrix
+#' @param Y_mat dependent variable matrix
+#' @param Z_mat external variable matrix
+#' @param W cross-sectionally invariant variables - not used now
+#' @param T time dimension of the data
+#' @param N cross-sectional dimension of the data
+#' @param aux_Y0 auxiliary matrix with initial observations of the dependent variable 
 loglikelihood_GMM <- function(theta, rho_GMMpar, alpha_GMMpar, sigma2_GMMpar,
                               n_alpha, X_mat, Y_mat, Z_mat, W, T, N, aux_Y0) {
   if (n_alpha > 0) {
@@ -304,12 +304,12 @@ loglikelihood_GMM <- function(theta, rho_GMMpar, alpha_GMMpar, sigma2_GMMpar,
 #' Provide posterior means of lambda_i's based on the Parametric Posterior Mean
 #' estimator with correlated random coefficients
 #'
-#' @param lambda0 .
-#' @param sigma2 .
-#' @param mmu .
-#' @param ww2_lambda .
-#' @param W .
-#' @param aux_Y0 .
+#' @param lambda0 initial estimate of lambdas
+#' @param sigma2 variance of the shocks
+#' @param mmu auxiliary result (mean)
+#' @param ww2_lambda auxiliary result (lambda times ww2)
+#' @param W cross-sectionally invariant variables - not used now
+#' @param aux_Y0 auxiliary matrix with initial observations of the dependent variable 
 #'
 #' @importFrom pracma mldivide Diag
 post_mean_lambda_par <- function(lambda0, sigma2, mmu, ww2_lambda, W, aux_Y0) {

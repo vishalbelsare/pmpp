@@ -5,29 +5,29 @@
 \title{Produce variance of the shocks estimated using GMM residues (sigma2_0)
 given the common coefficients (rho0)}
 \usage{
-get_sigma2(rho, alpha = 0, common_par_method, X_star, Y_star, Z_star, X_mat,
-  Y_mat, Z_mat, n_alpha)
+get_sigma2(rho, alpha = 0, common_par_method, X_star, Y_star, Z_star,
+  X_mat, Y_mat, Z_mat, n_alpha)
 }
 \arguments{
-\item{rho}{.}
+\item{rho}{lagged dependent variable coefficients}
 
-\item{alpha}{.}
+\item{alpha}{external variables coefficients}
 
-\item{common_par_method}{.}
+\item{common_par_method}{method for estimating common parameters}
 
-\item{X_star}{.}
+\item{X_star}{auxilliary matrix for OFD transformation}
 
-\item{Y_star}{.}
+\item{Y_star}{auxilliary matrix for OFD transformation}
 
-\item{Z_star}{.}
+\item{Z_star}{auxilliary matrix for OFD transformation}
 
-\item{X_mat}{.}
+\item{X_mat}{lagged dependent variable matrix}
 
-\item{Y_mat}{.}
+\item{Y_mat}{dependent variable matrix}
 
-\item{Z_mat}{.}
+\item{Z_mat}{external variable matrix}
 
-\item{n_alpha}{.}
+\item{n_alpha}{number of external variables}
 }
 \description{
 Produce variance of the shocks estimated using GMM residues (sigma2_0)

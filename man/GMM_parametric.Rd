@@ -5,43 +5,44 @@
 \title{Produce posterior means of lambda's for the parametric GMM implementation
 given autoregressive coefficient (rho)}
 \usage{
-GMM_parametric(rho, alpha = 0, optim_method, init, n_lambda, n_alpha, X_mat,
-  Y_mat, Z_mat, W, T, N, aux_Y0, common_par_method, X_star, Y_star, Z_star)
+GMM_parametric(rho, alpha = 0, optim_method, init, n_lambda, n_alpha,
+  X_mat, Y_mat, Z_mat, W, T, N, aux_Y0, common_par_method, X_star, Y_star,
+  Z_star)
 }
 \arguments{
-\item{rho}{.}
+\item{rho}{lagged dependent variable coefficients}
 
-\item{alpha}{.}
+\item{alpha}{external variables coefficients}
 
-\item{optim_method}{.}
+\item{optim_method}{optimization method}
 
-\item{init}{.}
+\item{init}{initial values for the optimization routine}
 
-\item{n_lambda}{.}
+\item{n_lambda}{number of columns in W; currently always set to 1}
 
-\item{n_alpha}{.}
+\item{n_alpha}{number of external variables}
 
-\item{X_mat}{.}
+\item{X_mat}{lagged dependent variable matrix}
 
-\item{Y_mat}{.}
+\item{Y_mat}{dependent variable matrix}
 
-\item{Z_mat}{.}
+\item{Z_mat}{external variable matrix}
 
-\item{W}{.}
+\item{W}{cross-sectionally invariant variables - not used now}
 
-\item{T}{.}
+\item{T}{time dimension of the data}
 
-\item{N}{.}
+\item{N}{cross-sectional dimension of the data}
 
-\item{aux_Y0}{.}
+\item{aux_Y0}{auxiliary matrix with initial observations of the dependent variable}
 
-\item{common_par_method}{.}
+\item{common_par_method}{method for estimating common parameters}
 
-\item{X_star}{.}
+\item{X_star}{auxilliary matrix for OFD transformation}
 
-\item{Y_star}{.}
+\item{Y_star}{auxilliary matrix for OFD transformation}
 
-\item{Z_star}{.}
+\item{Z_star}{auxilliary matrix for OFD transformation}
 }
 \description{
 Produce posterior means of lambda's for the parametric GMM implementation

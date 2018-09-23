@@ -8,17 +8,17 @@ and the initial data Y0}
 get_kernel(lambdas, sigma2, dens_grid, N, T, Y0)
 }
 \arguments{
-\item{lambdas}{.}
+\item{lambdas}{sufficient statistics for the intercept term}
 
-\item{sigma2}{.}
+\item{sigma2}{variance of the shocks}
 
-\item{dens_grid}{.}
+\item{dens_grid}{grid over which the density is to be computed}
 
-\item{N}{.}
+\item{N}{cross-sectional dimension of the data}
 
-\item{T}{.}
+\item{T}{time dimension of the data}
 
-\item{Y0}{.}
+\item{Y0}{initial observations of the dependent variable}
 }
 \description{
 Obtain 2D kernel density estimates given sufficient statistics for lambdas

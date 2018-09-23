@@ -8,17 +8,17 @@ estimator with correlated random coefficients}
 post_mean_lambda_par(lambda0, sigma2, mmu, ww2_lambda, W, aux_Y0)
 }
 \arguments{
-\item{lambda0}{.}
+\item{lambda0}{initial estimate of lambdas}
 
-\item{sigma2}{.}
+\item{sigma2}{variance of the shocks}
 
-\item{mmu}{.}
+\item{mmu}{auxiliary result (mean)}
 
-\item{ww2_lambda}{.}
+\item{ww2_lambda}{auxiliary result (lambda times ww2)}
 
-\item{W}{.}
+\item{W}{cross-sectionally invariant variables - not used now}
 
-\item{aux_Y0}{.}
+\item{aux_Y0}{auxiliary matrix with initial observations of the dependent variable}
 }
 \description{
 Provide posterior means of lambda_i's based on the Parametric Posterior Mean

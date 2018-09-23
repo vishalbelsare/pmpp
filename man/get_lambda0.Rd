@@ -8,23 +8,23 @@ get_lambda0(rho, alpha = rep(0, n_alpha), N, T, n_alpha, Y_mat, X_mat, W,
   Z_mat)
 }
 \arguments{
-\item{rho}{.}
+\item{rho}{lagged dependent variable coefficients}
 
-\item{alpha}{.}
+\item{alpha}{external variables coefficients}
 
-\item{N}{.}
+\item{N}{cross-sectional dimension of the data}
 
-\item{T}{.}
+\item{T}{time dimension of the data}
 
-\item{n_alpha}{.}
+\item{n_alpha}{number of external variables}
 
-\item{Y_mat}{.}
+\item{Y_mat}{dependent variable matrix}
 
-\item{X_mat}{.}
+\item{X_mat}{lagged dependent variable matrix}
 
-\item{W}{.}
+\item{W}{cross-sectionally invariant variables - not used now}
 
-\item{Z_mat}{.}
+\item{Z_mat}{external variable matrix}
 }
 \description{
 Produce sufficient statistics (lambda0) given the common coefficients (rho0)

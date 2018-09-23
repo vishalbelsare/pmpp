@@ -1,3 +1,5 @@
+[![Travis-CI Build Status](https://travis-ci.org/veneficusnl/pmpp.svg?branch=master)](https://travis-ci.org/veneficusnl/pmpp)
+
 # Posterior Mean Panel Predictor
 
 This framework takes empirical-Bayes approach to compute forecasts with panel data. The features include what follows:

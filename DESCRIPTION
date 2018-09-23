@@ -1,0 +1,28 @@
+Package: pmpp
+Type: Package
+Title: Posterior Mean Panel Predictor
+Version: 0.1.0
+Date: 2018-09-07
+Authors@R: person("Michal", "Oleszak", email = "michal.oleszak@veneficus.nl", role = c("aut", "cre"))
+Description: Dynamic panel modelling framework based on an empirical-Bayes approach.
+             Contains tools for computing point forecasts and bootstrapping prediction inrevals.
+License: GPL (>= 2)
+Depends: R (>= 3.4.0)
+Imports: plm,
+         pracma,
+         MASS,
+         Matrix,
+         minqa,
+         dplyr,
+         data.table,
+         moments,
+         magrittr,
+         ggplot2,
+         stats,
+         utils,
+         graphics
+Suggests: testthat,
+          lintr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1

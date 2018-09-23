@@ -23,9 +23,9 @@ The kernel is assumed to be Gaussian. Bandwidth matrix is
              without ever using/assuming any parametric model for the data
              or any "rules of thumb". Unlike many other procedures, this one
              is immune to accuracy failures in the estimation of multimodal
-             densities with widely separated modes. This function in an R's
-             equivalent of MATLAB's \code{kde2d()} function programmed and
-             published by Z. I. Botev at:
+             densities with widely separated modes. This function in meant to be
+             the R implementation of the MATLAB \code{kde2d()} function written 
+             and published by Z. I. Botev at:
              \url{http://web.maths.unsw.edu.au/~zdravkobotev/}
 }
 \references{

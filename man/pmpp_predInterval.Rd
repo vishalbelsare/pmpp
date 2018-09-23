@@ -33,11 +33,12 @@ Produces prediction intervals for Posterior Mean Panel Predictor
              error terms, both across units and over time. Block window is chosen randomly.
 }
 \examples{
-data(EmplUK, package = "plm")
+\dontrun{data(EmplUK, package = "plm")
 EmplUK <- dplyr::filter(EmplUK, year \%in\% c(1978, 1979, 1980, 1981, 1982))
 pmpp_model <- pmpp(dep_var = "emp", data = EmplUK)
 my_fframe <- create_fframe(EmplUK, 1983:1985)
 intervals <- pmpp_predinterval(pmpp_model, my_fframe, boot_reps = 10)
+}
 }
 \references{
 Oleszak, M. (2018). "Forecasting sales with micro-panels:

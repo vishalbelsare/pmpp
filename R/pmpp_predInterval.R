@@ -29,11 +29,12 @@
 #' @export
 #'
 #' @examples
-#' data(EmplUK, package = "plm")
+#' \dontrun{data(EmplUK, package = "plm")
 #' EmplUK <- dplyr::filter(EmplUK, year %in% c(1978, 1979, 1980, 1981, 1982))
 #' pmpp_model <- pmpp(dep_var = "emp", data = EmplUK)
 #' my_fframe <- create_fframe(EmplUK, 1983:1985)
 #' intervals <- pmpp_predinterval(pmpp_model, my_fframe, boot_reps = 10)
+#' }
 pmpp_predinterval <- function(model, fframe, boot_reps = 1000, block_size = NULL,
                               confidence = 0.95, iter = NULL) {
   start_global <- Sys.time()

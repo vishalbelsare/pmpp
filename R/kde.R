@@ -6,12 +6,11 @@
 #'              many plug-in methods on multimodal densities with widely
 #'              separated modes. This function is the cleaned-up version of 
 #'              the code written and published by Z. I. Botev at:
-#'              \url{http://web.maths.unsw.edu.au/~zdravkobotev/}.
+#'              \url{http://web.maths.unsw.edu.au/~zdravkobotev/}
 #'
 #' @references Z. I. Botev, J. F. Grotowski and D. P. Kroese,
 #'             "Kernel Density Estimation Via Diffusion",
-#'             Annals of Statistics, 2010, Volume 38, Number 5, Pages 2916-2957,
-#'             source: \url{http://web.maths.unsw.edu.au/%7Ezdravkobotev/kde.R}
+#'             Annals of Statistics, 2010, Volume 38, Number 5, Pages 2916-2957
 #'
 #' @param data a vector of data from which the density estimate is constructed;
 #' @param n    the number of mesh points used in the uniform discretization of

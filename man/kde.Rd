@@ -29,7 +29,9 @@ State-of-the-art gaussian kernel density estimator for
              one-dimensional data. The estimator does not use the commonly
              employed 'gaussian rule of thumb'. As a result, it outperforms
              many plug-in methods on multimodal densities with widely
-             separated modes.
+             separated modes. This function is the cleaned-up version of 
+             the code written and published by Z. I. Botev at:
+             \url{http://web.maths.unsw.edu.au/~zdravkobotev/}
 }
 \examples{
 set.seed(1)
@@ -40,6 +42,5 @@ plot(d[1,], d[2,], type = 'l', xlab = 'x', ylab = 'density f(x)')
 \references{
 Z. I. Botev, J. F. Grotowski and D. P. Kroese,
             "Kernel Density Estimation Via Diffusion",
-            Annals of Statistics, 2010, Volume 38, Number 5, Pages 2916-2957,
-            source: \url{http://web.maths.unsw.edu.au/~zdravkobotev/}
+            Annals of Statistics, 2010, Volume 38, Number 5, Pages 2916-2957
 }

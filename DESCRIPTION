@@ -6,6 +6,8 @@ Date: 2018-09-23
 Authors@R: person("Michal", "Oleszak", email = "oleszak.michal@gmail.com", role = c("aut", "cre"))
 Description: Dynamic panel modelling framework based on an empirical-Bayes approach.
              Contains tools for computing point forecasts and bootstrapping prediction intervals.
+URL: https://github.com/veneficusnl/pmpp
+BugReports: https://github.com/veneficusnl/pmpp/issues
 License: GPL (>= 2)
 Depends: R (>= 3.4.0)
 Imports: plm,

@@ -1,7 +1,7 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Added missing fields to DESCRIPTION file: URL and BugReports
+* Added reference about the method in the Description field, as requested
 
 ## Test environments
 * local OS X install, R 3.5.1
